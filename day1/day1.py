@@ -1,7 +1,6 @@
 #!/usr/bin/python
 
 import sys
-import pdb
 
 
 def find_first_digit(line):
@@ -58,7 +57,6 @@ def find_last_number(line):
             if (i - len(num_str) > -1) and line[i - len(num_str) + 1: i + 1] == num_str:
                 return n
 
-    pdb.set_trace()
     raise Exception(f"Failed to find a number in {line}")
 
 
@@ -69,7 +67,6 @@ def part_two(lines):
                             10) + find_last_number(line))
 
     print(f"Calibration sum: {calibration_sum}")
-    pdb.set_trace()
     return calibration_sum
 
 
@@ -79,9 +76,11 @@ def main():
         lines = f.readlines()
 
     if len(sys.argv) < 2 or sys.argv[1] == "1":
-        return part_one(lines)
+        part_one(lines)
     else:
-        return part_two(lines)
+        part_two(lines)
+
+    return 0
 
 
 if __name__ == "__main__":
